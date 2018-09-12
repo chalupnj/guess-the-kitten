@@ -1,0 +1,181 @@
+img {
+	width: calc(100% - 10px);
+	border: 5px inset #976ade;
+	z-index: 1;
+	vertical-align: middle;
+}
+figcaption {
+	text-align: center;
+	font-size: 50px;
+	color: #a50c5f;
+	text-shadow: 2px 2px #000000;
+	font-family: 'Galada', cursive;
+	z-index: -1;
+	position: relative;
+	bottom: 130px;
+}
+.row {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 0 4px;
+	justify-content: space-between;
+}
+.column {
+	flex: 25%;
+	max-width: 30%;
+	padding: 0 4px;
+}
+@media screen and (max-width: 800px) {
+  .column {
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .column {
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+.img-container:hover img{
+	z-index: -2;
+	border-radius: 50%;
+	border: 5px solid #db414f;
+	opacity: 0.5;
+}
+.correct-kitten {
+	border: 10px dotted #00ff00;
+}
+#modal {
+	z-index: 50;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 1rem 1.5rem;
+    width: 50rem;
+    border-radius: 0.5rem;
+    line-height: 1rem;
+    font-family: helvetica;
+    visibility: hidden;
+}
+.modal-header button {
+    float: right;
+    width: 1.5rem;
+    line-height: 1.5rem;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    border: 1px #cecdcd solid;
+	margin: -1.5rem -0.5rem;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+}
+.modal-header h3 {
+    text-align: center;
+	padding-bottom: 1.5rem;
+	font-size: 1.75rem;
+	line-height: 2rem;
+}
+.modal-header button:hover {
+    background-color: darkgray;
+}
+.show-modal {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.0);
+}
+.button {
+	margin: 1.5rem 1.5rem;
+	padding: 0.5rem;
+	border-radius: 0.25rem;
+	box-shadow: none;	
+}
+.submit-button {	
+	background-color: #2ecc40;
+	border: 1px #2db33c solid;
+	padding: 1rem;
+	font-size: 1.25rem;
+	color: white;
+}
+.blue-button {
+	background-color: #0074D9;
+	border: 1px #0262b6 solid;
+	padding:1rem;
+	font-size: 1.25rem;
+	color: white;
+}
+.modal-title {
+	text-align: center;
+}
+.modal-footer {
+	display: flex;
+	justify-content: center;
+	padding: 1.5rem 3rem 0 3rem;
+}
+#username-field {
+ 	margin: 0.2rem 18rem;
+    width: 14rem;
+    height: 2rem;
+    border-radius: 0.25rem;
+    font-size: 1.25rem;
+}
+#sane-button {
+	background-color: #2ecc40;
+	border: 1px #2db33c solid;
+	height: 3rem;
+	width: 4rem;
+	font-size: 1.25rem;
+	color: white;
+}
+#insane-button {
+	background-color: #ff4136;
+	border: 1px #da352b solid;
+	height: 3rem;
+	width: 4rem;
+	font-size: 1.25rem;
+	color: white;
+}
+#mistake-button {
+	background-color: #2ecc40;
+	border: 1px #2db33c solid;
+	padding: 1rem;
+	font-size: 1.25rem;
+	color: white;
+}
+#fuck-button {
+	background-color: #ff4136;
+	border: 1px #da352b solid;
+	padding: 1rem;
+	font-size: 1.25rem;
+	color: white;
+}
+#guess-form {
+	display: flex;
+	flex-wrap: wrap;
+}
+.form-col {
+	flex: 1;
+}
+.radio {
+	font-size: 1rem;
+}
+h2 {
+	text-align: center;
+}
+#secret-kitten-img {
+	border: none;
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+}

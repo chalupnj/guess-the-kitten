@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Kittens!</title>
+	<link rel = "stylesheet" type="text/css" href="kitty-grid-flex.css">
+	<link href = "https://fonts.googleapis.com/css?family=Galada" rel = "stylesheet">
+</head>
+
+<body>
+
+<!-- Get username -->
+<!-- Modal -->
+<div id="modal" role="dialog">
+    <div class="modal-dialog">
+        <!-- Get user's name -->
+  		<div class="modal-content" id="username-modal">
+	    	<div class="modal-header">
+		        <button type="button" class="close" onclick="closeModal()" data-dismiss="modal">&times;</button>
+		        <h3 class="modal-title">Hi! Welcome! What is your name?</h3>
+	    	</div>
+			<div class="modal-body">
+		        <form id="username-form">
+		        	<input type="text" id="username-field" name="username">
+		        </form>
+		    </div>
+		    <div class="modal-footer">
+		        <button type="button" class="button submit-button" id="submit-name" onclick="submitName()">Submit</button>
+		    </div>
+		</div>
+
+	    <!-- Determine whether user is a psychopath -->
+	    <div class="modal-content" id="psychopath-test-form">
+	    	<div class="modal-header">
+		        <button type="button" class="close" onclick="closeModal()" data-dismiss="modal">&times;</button>
+		        <h3 class="modal-title" id="hello-message">Hello. Do you like kittens?</h3>
+	    	</div>
+		    <div class="modal-footer">
+		        <button type="button" class="button" id="sane-button" value="yes" onclick="isSane()">Yes</button>
+		        <button type="button" class="button" id="insane-button" value="no" onclick="notSane()">No</button>
+		    </div>
+		</div>
+
+		<!-- Tell the user they are not a psychopath -->
+		<div class="modal-content" id="not-psychopath-modal">
+	    	<div class="modal-header">
+		        <button type="button" class="close" onclick="closeModal()" data-dismiss="modal">&times;</button>
+		        <h3 class="modal-title">Correct! <br> You are not a psychopath so you may play the game.</h3>
+	    	</div>
+		    <div class="modal-footer">
+		        <button type="button" class="button blue-button" onclick="playGame()">Continue</button>
+		    </div>
+		</div>
+
+		<!-- Tell the user they are a psychopath -->
+		<div class="modal-content" id="is-psychopath-modal">
+	    	<div class="modal-header">
+		        <button type="button" class="close" onclick="closeModal()" data-dismiss="modal">&times;</button>
+		        <h3 class="modal-title">Sorry, you are a psychopath. Rethink your values and try again.</h3>
+	    	</div>
+		    <div class="modal-footer">
+		        <button type="button" class="button" id="mistake-button" onclick="playGame()">I've made a horrible mistake</button>
+		        <button type="button" class="button" id="fuck-button" onclick="quitGame()">Fuck this</button>
+		    </div>
+		</div>
+
+        <!-- Get user's guess and check it -->
+  		<div class="modal-content" id="guess-modal">
+	    	<div class="modal-header">
+		        <button type="button" class="close" onclick="closeModal()" data-dismiss="modal">&times;</button>
+		        <h3 class="modal-title">Which kitten am I thinking of?</h3>
+	    	</div>
+			<div class="modal-body">
+		        <form id="guess-form">
+		        	<div class="form-col">
+			        	<input type="radio" class="radio" name="kittyName" id = "tony" value="Tony">
+		        		<label for="tony">Tony</label><br>
+		        		<input type="radio" class="radio" name="kittyName" id = "cleo" value="Cleo">
+		        		<label for="cleo">Cleo</label><br>
+		        		<input type="radio" class="radio" name="kittyName" id = "franklin" value="Franklin">
+		        		<label for="franklin">Franklin</label><br>
+		        		<input type="radio" class="radio" name="kittyName" id = "birdie" value="Birdie">
+		        		<label for="birdie">Birdie</label><br>
+		        		<input type="radio" class="radio" name="kittyName" id = "nacho" value="Nacho">
+		        		<label for="nacho">Nacho</label><br>
+		        	</div>
+		        	<div class="form-col">
+		        		<input type="radio" class="radio" name="kittyName" id = "nutella" value="Nutella">
+		        		<label for="nutella">Nutella</label><br>
+		        		<input type="radio" class="radio" name="kittyName" id = "noodle" value="Noodle">
+		        		<label for="noodle">Noodle</label><br>
+		        		<input type="radio" class="radio" name="kittyName" id = "holla" value="Holla">
+		        		<label for="holla">Holla</label><br>
+		        		<input type="radio" class="radio" name="kittyName" id = "ween" value="Ween">
+		        		<label for="ween">Ween</label><br>
+		        		<input type="radio" class="radio" name="kittyName" id = "liberace" value="Liberace">
+		        		<label for="liberace">Liberace</label><br>
+			        </div>
+			        <div class="form-col">
+			        	<input type="radio" class="radio" name="kittyName" id = "liam" value="Liam">
+		        		<label for="liam">Liam</label><br>
+		        		<input type="radio" class="radio" name="kittyName" id = "fartima" value="Fartima">
+		        		<label for="fartima">Fartima</label><br>
+		        		<input type="radio" class="radio" name="kittyName" id = "angeweena-joween" value="Angeweena Joween">
+		        		<label for="angeweena-joween">Angeweena Joween</label><br>
+		        		<input type="radio" class="radio" name="kittyName" id = "meatloaf" value="Meatloaf">
+		        		<label for="meatloaf">Meatloaf</label><br>
+					</div>
+		        </form>
+	        </div>
+	        <div class="modal-footer">
+	        	<button type="button" class="button submit-button" onclick="checkAnswer()">Submit</button>
+	        </div>
+	    </div>
+
+	    <!-- Notify user of wrong guess and give hint. -->
+		<div class="modal-content" id="incorrect-guess-modal">
+	    	<div class="modal-header">
+		        <button type="button" class="close" onclick="closeModal()" data-dismiss="modal">&times;</button>
+		        <h3 class="modal-title" id="incorrect-message">Wrong!</h3>
+	    	</div>
+		    <div class="modal-footer">
+		        <button type="button" class="button blue-button" onclick="playGame()">Try again</button>
+		    </div>
+		</div>
+
+		<!-- Notify user of correct guess and show secret kitten image. -->
+		<div class="modal-content" id="correct-guess-modal">
+	    	<div class="modal-header">
+		        <button type="button" class="close" onclick="closeModal()" data-dismiss="modal">&times;</button>
+		        <h3 class="modal-title" id="correct-message">Correct!</h3>
+	    	</div>
+	    	<div class="modal-body" id="correct-img-container">
+	    		<img id="secret-kitten-img" src="">
+	    	</div>
+		    <div class="modal-footer">
+		        <button type="button" class="button blue-button" onclick="showStats()">See stats</button>
+		    </div>
+		</div>
+
+		<!-- Show number of guesses. -->
+		<div class="modal-content" id="stats-modal">
+	    	<div class="modal-header">
+		        <button type="button" class="close" onclick="closeModal()" data-dismiss="modal">&times;</button>
+		        <h3 class="modal-title" id="level-message">Good job!</h3>
+	    	</div>
+	    	<div class="modal-body">
+	    		<h2 id="stats-message">You  guessed the secret kitten.<h2>
+	    	</div>
+		    <div class="modal-footer">
+		        <button type="button" class="button blue-button" onclick="closeModal()">Show me the kittens!</button>
+		    </div>
+		</div>
+    </div>
+</div>
+
+<!-- TO ADD CATS, CROP PIC TO A SQUARE. ADD NEW IMG-CONTAINER DIV, ONE TO EACH COLUMN DIV SO THEY'RE EVEN. MAKE SURE TO ADD KITTEN TRAITS TO JS FILE IN THIS ORDER (TOP>BOTTOM). -->
+	<div class = "row">
+		<!-- Column 1 -->
+		<div class = "column">
+			<div class = "img-container">
+				<img src = "cat-imgs/Tony.jpg">
+				<figcaption>Tony</figcaption>
+			</div>
+			<div class = "img-container">
+				<img src = "cat-imgs/Franklin.jpg">
+				<figcaption>Franklin</figcaption>
+			</div>
+			<div class = "img-container">
+				<img src = "cat-imgs/Noodle.jpg">
+				<figcaption>Noodle</figcaption>
+			</div>
+			<div class = "img-container">		
+				<img src = "cat-imgs/Liberace.jpg">
+				<figcaption>Liberace</figcaption>
+			</div>
+			<div class = "img-container">		
+				<img src = "cat-imgs/Angeweena-Joween.jpg">
+				<figcaption>Angeweena Joween</figcaption>
+			</div>
+		</div>
+		<!-- Column 2 -->
+		<div class = "column">
+			<div class = "img-container">
+				<img src = "cat-imgs/Cleo.jpg">
+				<figcaption>Cleo</figcaption>
+			</div>
+			<div class = "img-container">	
+				<img src = "cat-imgs/Nacho.jpg">
+				<figcaption>Nacho</figcaption>
+			</div>
+			<div class = "img-container">	
+				<img src = "cat-imgs/Holla.jpg">
+				<figcaption>Holla</figcaption>
+			</div>
+			<div class = "img-container">		
+				<img src = "cat-imgs/Liam.jpg">
+				<figcaption>Liam</figcaption>
+			</div>
+			<div class = "img-container">		
+				<img src = "cat-imgs/Meatloaf.jpg">
+				<figcaption>Meatloaf</figcaption>
+			</div>
+		</div>
+		<!-- Column 3 -->
+		<div class = "column">
+			<div class = "img-container">
+				<img src = "cat-imgs/Birdie.jpg">
+				<figcaption>Birdie</figcaption>
+			</div>
+			<div class = "img-container">
+				<img src = "cat-imgs/Nutella.jpg">
+				<figcaption>Nutella</figcaption>
+			</div>
+			<div class = "img-container">		
+				<img src = "cat-imgs/Ween.jpg">
+				<figcaption>Ween</figcaption>
+			</div>
+			<div class = "img-container">		
+				<img src = "cat-imgs/Fartima.jpg">
+				<figcaption>Fartima</figcaption>
+			</div>
+		</div>
+	</div>
+<script src = "kitten-script.js"></script>
+</body>
+</html>
