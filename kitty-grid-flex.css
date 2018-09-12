@@ -12,7 +12,8 @@ figcaption {
 	font-family: 'Galada', cursive;
 	z-index: -1;
 	position: relative;
-	bottom: 130px;
+	bottom: 110px;
+	line-height: 55px;
 }
 .row {
 	display: flex;
@@ -152,7 +153,7 @@ figcaption {
 	font-size: 1.25rem;
 	color: white;
 }
-#fuck-button {
+#no-way-button {
 	background-color: #ff4136;
 	border: 1px #da352b solid;
 	padding: 1rem;
