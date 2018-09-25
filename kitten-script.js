@@ -69,7 +69,7 @@ var kittens = [{
 	image: "cat-imgs/Tony.jpg"
 },
 {
-	name: "Angeweena Joween",
+	name: "Angeweena",
 	traits: ["half chimpanzee", "middle child", "snoozy", "family-oriented", "lazy"],
 	image: "cat-imgs/Tony.jpg"
 },
@@ -133,6 +133,9 @@ function getRadioVal(form, name) {
     for (var i=0; i<kittens.length; i++) {
         if (radios[i].checked ) { // radio checked?
             guess = radios[i].value; // if so, hold its value in guess
+			document.getElementById(guess).disabled = true;
+			var element = document.getElementById(guess + "-label");
+    		element.classList.add("disabled-radio");
             break; // and break out of for loop
         }
     }

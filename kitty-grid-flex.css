@@ -15,6 +15,9 @@ figcaption {
 	bottom: 110px;
 	line-height: 55px;
 }
+.disabled-radio {
+	color: #c8c8c8;
+}
 .row {
 	display: flex;
 	flex-wrap: wrap;
@@ -153,7 +156,7 @@ figcaption {
 	font-size: 1.25rem;
 	color: white;
 }
-#no-way-button {
+#fuck-button {
 	background-color: #ff4136;
 	border: 1px #da352b solid;
 	padding: 1rem;
