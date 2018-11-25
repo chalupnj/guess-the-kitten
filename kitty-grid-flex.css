@@ -4,6 +4,9 @@ img {
 	z-index: 1;
 	vertical-align: middle;
 }
+.img-container {
+	height: 350px;
+}
 figcaption {
 	text-align: center;
 	font-size: 50px;
