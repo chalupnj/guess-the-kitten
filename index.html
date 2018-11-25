@@ -63,7 +63,7 @@
 		    </div>
 		</div>
 
-        <!-- Get user's guess and check it -->
+        <!-- Get user's guess and check it. TO UPDATE, INSERT INPUT AND LABEL TAG FOR EACH NEW KITTEN. ADD THE NEW KITTENS TO THE END OF THE LIST AND ADJUST THE DIVS SO THEY ARE EVEN (THIS ORDER IS DIFFERENT THAN THE ORDER FOR THE IMAGES AND JS FILE). -->
   		<div class="modal-content" id="guess-modal">
 	    	<div class="modal-header">
 		        <button type="button" class="close" onclick="closeModal()" data-dismiss="modal">&times;</button>
@@ -82,10 +82,10 @@
 		        		<label for="Birdie" id="Birdie-label">Birdie</label><br>
 		        		<input type="radio" class="radio" name="kittyName" id="Nacho" value="Nacho">
 		        		<label for="Nacho" id="Nacho-label">Nacho</label><br>
-		        	</div>
-		        	<div class="form-col">
 		        		<input type="radio" class="radio" name="kittyName" id="Nutella" value="Nutella">
 		        		<label for="Nutella" id="Nutella-label">Nutella</label><br>
+		        	</div>
+		        	<div class="form-col">
 		        		<input type="radio" class="radio" name="kittyName" id="Noodle" value="Noodle">
 		        		<label for="Noodle" id="Noodle-label">Noodle</label><br>
 		        		<input type="radio" class="radio" name="kittyName" id="Holla" value="Holla">
@@ -94,16 +94,22 @@
 		        		<label for="Ween" id="Ween-label">Ween</label><br>
 		        		<input type="radio" class="radio" name="kittyName" id="Liberace" value="Liberace">
 		        		<label for="Liberace" id="Liberace-label">Liberace</label><br>
-			        </div>
-			        <div class="form-col">
-			        	<input type="radio" class="radio" name="kittyName" id="Liam" value="Liam">
+		        		<input type="radio" class="radio" name="kittyName" id="Liam" value="Liam">
 		        		<label for="Liam" id="Liam-label">Liam</label><br>
 		        		<input type="radio" class="radio" name="kittyName" id="Fartima" value="Fartima">
 		        		<label for="Fartima" id="Fartima-label">Fartima</label><br>
+			        </div>
+			        <div class="form-col">
 		        		<input type="radio" class="radio" name="kittyName" id="Angeweena" value="Angeweena">
 		        		<label for="Angeweena" id="Angeweena-label">Angeweena Joween</label><br>
 		        		<input type="radio" class="radio" name="kittyName" id="Meatloaf" value="Meatloaf">
 		        		<label for="Meatloaf" id="Meatloaf-label">Meatloaf</label><br>
+		        		<input type="radio" class="radio" name="kittyName" id="Breakfast" value="Breakfast">
+		        		<label for="Breakfast" id="Breakfast-label">Breakfast</label><br>
+		        		<input type="radio" class="radio" name="kittyName" id="Lunch" value="Lunch">
+		        		<label for="Lunch" id="Lunch-label">Lunch</label><br>
+		        		<input type="radio" class="radio" name="kittyName" id="Dinner" value="Dinner">
+		        		<label for="Dinner" id="Dinner-label">Dinner</label><br>
 					</div>
 		        </form>
 	        </div>
@@ -173,9 +179,13 @@
 				<img src = "cat-imgs/Liberace.jpg">
 				<figcaption>Liberace</figcaption>
 			</div>
-			<div class = "img-container">		
+			<div class = "img-container" id="long-name">		
 				<img src = "cat-imgs/Angeweena-Joween.jpg">
 				<figcaption>Angeweena Joween</figcaption>
+			</div>
+			<div class = "img-container">		
+				<img src = "cat-imgs/Lunch.jpg">
+				<figcaption>Lunch</figcaption>
 			</div>
 		</div>
 		<!-- Column 2 -->
@@ -200,6 +210,10 @@
 				<img src = "cat-imgs/Meatloaf.jpg">
 				<figcaption>Meatloaf</figcaption>
 			</div>
+			<div class = "img-container">		
+				<img src = "cat-imgs/Dinner.jpg">
+				<figcaption>Dinner</figcaption>
+			</div>
 		</div>
 		<!-- Column 3 -->
 		<div class = "column">
@@ -218,6 +232,10 @@
 			<div class = "img-container">		
 				<img src = "cat-imgs/Fartima.jpg">
 				<figcaption>Fartima</figcaption>
+			</div>
+			<div class = "img-container">		
+				<img src = "cat-imgs/Breakfast.jpg">
+				<figcaption>Breakfast</figcaption>
 			</div>
 		</div>
 	</div>

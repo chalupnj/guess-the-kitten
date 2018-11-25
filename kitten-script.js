@@ -47,7 +47,7 @@ function playGame() {
 	document.getElementById("guess-modal").style.visibility = "visible";
 }
 
-//Kittens array of objects of array. YO UPDATE, BE SURE TO ADD KITTEN IN SAME TOP-BOTTOM ORDER AS IN HTML!
+//Kittens array of objects of array. TO UPDATE, BE SURE TO ADD KITTEN IN SAME TOP-BOTTOM ORDER AS IN HTML!
 var kittens = [{
 	name: "Tony",
 	traits: ["disgusting", "stinky", "disabled", "flawless", "of a big plop"],
@@ -56,70 +56,87 @@ var kittens = [{
 {
 	name: "Franklin",
 	traits: ["poopy", "loud", "cross-eyed", "idiotic", "handsome"],
-	image: "cat-imgs/Tony.jpg"
+	image: "cat-imgs/Franklin.jpg"
 },
 {
 	name: "Noodle",
 	traits: ["Italian", "runty", "cunty", "little", "stunty"],
-	image: "cat-imgs/Tony.jpg"
+	image: "cat-imgs/Noodle.jpg"
 },
 {
 	name: "Liberace",
 	traits: ["hyper", "adventurous", "smelly in the butt region", "deceased", "shoe-loving"],
-	image: "cat-imgs/Tony.jpg"
+	image: "cat-imgs/Liberace.jpg"
 },
 {
 	name: "Angeweena",
 	traits: ["half chimpanzee", "middle child", "snoozy", "family-oriented", "lazy"],
-	image: "cat-imgs/Tony.jpg"
+	image: "cat-imgs/Angeweena-Joween.jpg"
 },
+{
+	name: "Lunch",
+	traits: ["slightly cute", "adorable", "snuggly", "squishable", "vocal"],
+	image: "cat-imgs/Lunch.jpg"
+},
+// Column 2
 {
 	name: "Cleo",
 	traits: ["majestic", "hygenic", "stunning", "slutty", "angelic"],
-	image: "cat-imgs/Tony.jpg"
+	image: "cat-imgs/Cleo.jpg"
 },
 {
 	name: "Nacho",
 	traits: ["owned by Ashley", "spunky", "sleepy", "adopted", "friendly"],
-	image: "cat-imgs/Tony.jpg"
+	image: "cat-imgs/Nacho.jpg"
 },
 {
 	name: "Holla",
 	traits: ["ginger", "stripey", "purr-fect", "licky", "jumpy"],
-	image: "cat-imgs/Tony.jpg"
+	image: "cat-imgs/Holla.jpg"
 },
 {
 	name: "Liam",
 	traits: ["whiny", "petite", "scared to leave the bedroom", "pukey", "pillow-loving"],
-	image: "cat-imgs/Tony.jpg"
+	image: "cat-imgs/Liam.jpg"
 },
 {
 	name: "Meatloaf",
 	traits: ["loafy", "puffy", "nuzzly", "neck-loving", "perfect"],
-	image: "cat-imgs/Tony.jpg"
+	image: "cat-imgs/Meatloaf.jpg"
 },
+{
+	name: "Dinner",
+	traits: ["heavy", "ginormous", "slothful", "blemish-free", "drowsy"],
+	image: "cat-imgs/Dinner.jpg"
+},
+// Column 3
 {
 	name: "Birdie",
 	traits: ["flirty", "old ladyish", "scared", "shy", "pudgy"],
-	image: "cat-imgs/Tony.jpg"
+	image: "cat-imgs/Birdie.jpg"
 },
 {
 	name: "Nutella",
 	traits: ["boss bitch", "playful", "climby", "cute", "fast"],
-	image: "cat-imgs/Tony.jpg"
+	image: "cat-imgs/Nutella.jpg"
 },
 {
 	name: "Ween",
 	traits: ["fluffy", "scarf-like", "spooky", "stealthy", "bitey"],
-	image: "cat-imgs/Tony.jpg"
+	image: "cat-imgs/Ween.jpg"
 },
 {
 	name: "Fartima",
 	traits: ["farty", "screamy", "social", "poopful", "tweeny"],
-	image: "cat-imgs/Tony.jpg"
+	image: "cat-imgs/Fartima.jpg"
+},
+{
+	name: "Breakfast",
+	traits: ["gassy", "ear-loving", "confrontational", "vibrating", "hood-borrowing"],
+	image: "cat-imgs/Breakfast.jpg"
 }];
 
-//Randomly choose the secret kitten -- CHANGE THE NUMBER TO # OF KITTENS
+//Randomly choose the secret kitten
 var k = Math.floor((Math.random() * kittens.length));
 var secretKitten = kittens[k].name;
 console.log(secretKitten);
