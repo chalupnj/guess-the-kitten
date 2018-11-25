@@ -1,7 +1,7 @@
-//Get username
+// Get username
 document.getElementById("username-modal").style.visibility = "visible";
 
-//Prevent page refresh on Enter
+// Prevent page refresh on Enter
 document.getElementById('username-form').addEventListener('submit', function(event) {
 	event.preventDefault();
 });
@@ -14,7 +14,7 @@ function submitName() {
 	document.getElementById("psychopath-test-form").style.visibility = "visible";
 }
 
-//Submit username with Enter key
+// Submit username with Enter key
 nameInput.addEventListener("keyup", function(event) {
     // event.preventDefault();
     if (event.keyCode === 13) {
@@ -23,7 +23,7 @@ nameInput.addEventListener("keyup", function(event) {
 });
 
 
-//Psychopath test
+// Psychopath test
 var isSane;
 function isSane() {
 	document.getElementById("psychopath-test-form").style.visibility = "hidden";
@@ -40,14 +40,14 @@ function notSane() {
 	return isSane;
 }
 
-//Guess the kitten game
+// Guess the kitten game
 function playGame() {
 	document.getElementById("incorrect-guess-modal").style.visibility = "hidden";
 	document.getElementById("not-psychopath-modal").style.visibility = "hidden";
 	document.getElementById("guess-modal").style.visibility = "visible";
 }
 
-//Kittens array of objects of array. TO UPDATE, BE SURE TO ADD KITTEN IN SAME TOP-BOTTOM ORDER AS IN HTML!
+// Kittens array of objects of array. TO UPDATE, BE SURE TO ADD KITTEN IN SAME TOP-BOTTOM ORDER AS IN HTML!
 var kittens = [{
 	name: "Tony",
 	traits: ["disgusting", "stinky", "disabled", "flawless", "of a big plop"],
@@ -136,12 +136,12 @@ var kittens = [{
 	image: "cat-imgs/Breakfast.jpg"
 }];
 
-//Randomly choose the secret kitten
+// Randomly choose the secret kitten
 var k = Math.floor((Math.random() * kittens.length));
 var secretKitten = kittens[k].name;
 console.log(secretKitten);
 
-//Get user's guess
+// Get user's guess
 function getRadioVal(form, name) {
     var guess;
     // get list of radio buttons with specified name
@@ -159,18 +159,18 @@ function getRadioVal(form, name) {
     return guess; // return value of checked radio or undefined if none checked
 }
 
-//Track how many times user guesses
+// Track how many times user guesses
 var guessNum = 1;
-//Track hints up to 5 to ensure that each hint is given once before repeating
+// Track hints up to 5 to ensure that each hint is given once before repeating
 var hintNum = 0;
-//Determine how much user loves kittens based on how many guesses it took to guess the secret kitten
+// Determine how much user loves kittens based on how many guesses it took to guess the secret kitten
 var kittyLoveLevel = ["Kitty Psychic", "Kitty Lover", "Kitty Tolerator", "Kitty Idiot", "Kitty Hater"];
 var loveLevelNum;
 var guessesPerLevel = Math.ceil(kittens.length / 5);
-//Stores used values so user doesn't see the same hints twice
+// Stores used values so user doesn't see the same hints twice
 var iUsed = [];
 var jUsed = [];
-//User guesses kittens function
+// User guesses kittens function
 function checkAnswer() {
 	var i = Math.floor((Math.random() * 5));
 	var j = Math.floor((Math.random() * 5));
@@ -180,10 +180,10 @@ function checkAnswer() {
 	var guess = getRadioVal(document.getElementById("guess-form"), "kittyName");
 	console.log(guess);
 
-	//Check right or wrong
+	// Check right or wrong
 	var guessedKitten = kittens.findIndex(x => x.name===guess);
 	if (guess===secretKitten) {
-		//Notify user of correct guess, display image in modal, and highlight secret kitten image on page
+		// Notify user of correct guess, display image in modal, and highlight secret kitten image on page
 		document.getElementById("correct-message").innerHTML = "YOU'RE A GENIUS!!! The secret kitten is " + secretKitten + ".";
 		document.getElementById("secret-kitten-img").src = correctImg;
 		document.getElementById("guess-modal").style.visibility = "hidden";
@@ -194,7 +194,7 @@ function checkAnswer() {
 		console.log(iUsed, jUsed);
 		if (hintNum < 5) {
 			if (iUsed.indexOf(i) < 0 && jUsed.indexOf(j) < 0) {
-				//Notify user of incorrect guess, randomly choose trait of guessed kitten, and randomly choose secret kitten trait to give as hint.
+				// Notify user of incorrect guess, randomly choose trait of guessed kitten, and randomly choose secret kitten trait to give as hint.
 				document.getElementById("incorrect-message").innerHTML = "WRONG! That kitten is too " + kittens[guessedKitten].traits[i] + ". The kitten I am thinking of is more " + kittens[k].traits[j] + ".";
 				document.getElementById("guess-modal").style.visibility = "hidden";
 				document.getElementById("incorrect-guess-modal").style.visibility = "visible";
@@ -215,18 +215,18 @@ function checkAnswer() {
 			checkAnswer();
 		}
 	}
-//Evenly assign number of guesses to kittyLoveLevel based on how many kittens there are, and assign level to user based on their guessNum
+// Evenly assign number of guesses to kittyLoveLevel based on how many kittens there are, and assign level to user based on their guessNum
 loveLevelNum = Math.floor(guessNum / guessesPerLevel);
 }
 
 
-//Get image of secret kitten
+// Get image of secret kitten
 var kittenPic = document.getElementsByTagName("img")[k + 1];
 var correctImg = kittenPic.src;
 console.log(kittenPic);
 
 
-//Count the number of guesses the user took before finding the correct kitten
+// Count the number of guesses the user took before finding the correct kitten
 function showStats() {
 	document.getElementById("correct-guess-modal").style.visibility = "hidden";
 	document.getElementById("stats-modal").style.visibility = "visible";
@@ -239,7 +239,7 @@ function showStats() {
 	}
 }
 
-//Highlight image of correct kitten
+// Highlight image of correct kitten
 function highlightCorrectKitten() {
 	kittenPic.classList.add("correct-kitten");
 }
@@ -258,7 +258,7 @@ window.onclick = function(event) {
 	}
 }
 
-//Close modal on button click
+// Close modal on button click
 function closeModal() {
 	document.getElementById("modal").style.visibility = "hidden";
 	document.getElementById("username-modal").style.visibility = "hidden";
@@ -271,7 +271,7 @@ function closeModal() {
 	document.getElementById("stats-modal").style.visibility = "hidden";
 }
 
-//Closes program because user is a psychopath
+// Closes program because user is a psychopath
 function quitGame() {
 	window.close();
 }

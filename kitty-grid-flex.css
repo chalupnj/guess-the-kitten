@@ -53,6 +53,9 @@ figcaption {
 .correct-kitten {
 	border: 7px dotted #00ff00;
 }
+.img-container:hover .correct-kitten{
+	border-style: dotted;
+}
 #modal {
 	z-index: 50;
     position: fixed;
