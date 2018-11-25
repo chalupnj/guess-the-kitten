@@ -1,11 +1,8 @@
 img {
 	width: calc(100% - 10px);
-	border: 5px inset #976ade;
+	border: 7px inset #976ade;
 	z-index: 1;
 	vertical-align: middle;
-}
-.img-container {
-	height: 350px;
 }
 figcaption {
 	text-align: center;
@@ -17,6 +14,9 @@ figcaption {
 	position: relative;
 	bottom: 110px;
 	line-height: 55px;
+}
+.long-name {
+	font-size: 36px;
 }
 .disabled-radio {
 	color: #c8c8c8;
@@ -47,11 +47,11 @@ figcaption {
 .img-container:hover img{
 	z-index: -2;
 	border-radius: 50%;
-	border: 5px solid #db414f;
+	border: 7px solid #db414f;
 	opacity: 0.5;
 }
 .correct-kitten {
-	border: 10px dotted #00ff00;
+	border: 7px dotted #00ff00;
 }
 #modal {
 	z-index: 50;
@@ -159,7 +159,7 @@ figcaption {
 	font-size: 1.25rem;
 	color: white;
 }
-#fuck-button {
+#no-way-button {
 	background-color: #ff4136;
 	border: 1px #da352b solid;
 	padding: 1rem;
