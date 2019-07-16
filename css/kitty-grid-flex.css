@@ -1,61 +1,89 @@
-img {
-	width: calc(100% - 10px);
-	border: 7px inset #976ade;
-	z-index: 1;
-	vertical-align: middle;
+h1 {
+	text-align: center;
+	font-size: 50px;
+	color: #0074d9;
+	font-family: 'Helvetica';
+	margin-top: 30px ;
+	line-height: 55px;
 }
+
+h3 {
+	text-align: center;
+	font-size: 24px;
+	color: black;
+	font-family: 'Helvetica';
+	margin-bottom: 20px;
+	line-height: 29px;
+}	
+
+img {
+	border-radius: 7px;
+	vertical-align: middle;
+	width: calc(100% - 20px);
+	z-index: 1;
+}
+
 figcaption {
 	text-align: center;
 	font-size: 50px;
-	color: #a50c5f;
-	text-shadow: 2px 2px #000000;
+	color: #0074d9;
 	font-family: 'Galada', cursive;
 	z-index: -1;
 	position: relative;
-	bottom: 110px;
+	bottom: 80px;
 	line-height: 55px;
 }
+
 .long-name {
-	font-size: 36px;
+	font-size: 32px;
+	margin-left: -24px;
 }
+
 .disabled-radio {
 	color: #c8c8c8;
 }
+
 .row {
 	display: flex;
 	flex-wrap: wrap;
 	padding: 0 4px;
-	justify-content: space-between;
+	justify-content: space-around;
 }
+
 .column {
 	flex: 25%;
 	max-width: 30%;
-	padding: 0 4px;
+	padding: 10px 4px;
 }
+
 @media screen and (max-width: 800px) {
   .column {
     flex: 50%;
     max-width: 50%;
   }
 }
+
 @media screen and (max-width: 600px) {
   .column {
     flex: 100%;
-    max-width: 100%;
+	max-width: 100%;
   }
 }
+
 .img-container:hover img{
 	z-index: -2;
-	border-radius: 50%;
-	border: 7px solid #db414f;
 	opacity: 0.5;
 }
+
 .correct-kitten {
-	border: 7px dotted #00ff00;
-}
-.img-container:hover .correct-kitten{
+	border: 7px dotted #0074d9;
 	border-style: dotted;
 }
+
+.correct-kitten:hover {
+	opacity: 1;
+}
+
 #modal {
 	z-index: 50;
     position: fixed;
@@ -78,60 +106,57 @@ figcaption {
     font-family: helvetica;
     visibility: hidden;
 }
-.modal-header button {
-    float: right;
-    width: 1.5rem;
-    line-height: 1.5rem;
-    cursor: pointer;
-    border-radius: 0.25rem;
-    border: 1px #cecdcd solid;
-	margin: -1.5rem -0.5rem;
-	-webkit-box-shadow: none;
-	-moz-box-shadow: none;
-	box-shadow: none;
-}
+
 .modal-header h3 {
-    text-align: center;
-	padding-bottom: 1.5rem;
+	text-align: center;
+	padding-top: 2rem;
+	padding-bottom: 2rem;
 	font-size: 1.75rem;
 	line-height: 2rem;
 }
+
 .modal-header button:hover {
     background-color: darkgray;
 }
+
 .show-modal {
     opacity: 1;
     visibility: visible;
     transform: scale(1.0);
 }
+
 .button {
-	margin: 1.5rem 1.5rem;
-	padding: 0.5rem;
+    border: none;
 	border-radius: 0.25rem;
-	box-shadow: none;	
+	box-shadow: 1px 2px 2px 1px #CCC;
+	cursor: pointer;
+	margin: 1.5rem 1.5rem;
+	padding: 0.5rem;	
 }
-.submit-button {	
-	background-color: #2ecc40;
-	border: 1px #2db33c solid;
-	padding: 1rem;
-	font-size: 1.25rem;
-	color: white;
+
+.button:hover {
+	opacity: 0.5;
 }
-.blue-button {
+
+.blue-button,
+.submit-button {
 	background-color: #0074D9;
-	border: 1px #0262b6 solid;
-	padding:1rem;
+	padding: 0.75rem;
 	font-size: 1.25rem;
 	color: white;
+	width: 8rem;
 }
+
 .modal-title {
 	text-align: center;
 }
+
 .modal-footer {
 	display: flex;
 	justify-content: center;
 	padding: 1.5rem 3rem 0 3rem;
 }
+
 #username-field {
  	margin: 0.2rem 18rem;
     width: 14rem;
@@ -139,53 +164,97 @@ figcaption {
     border-radius: 0.25rem;
     font-size: 1.25rem;
 }
+
 #sane-button {
-	background-color: #2ecc40;
-	border: 1px #2db33c solid;
+	background-color: #0074D9;
 	height: 3rem;
 	width: 4rem;
 	font-size: 1.25rem;
 	color: white;
 }
+
 #insane-button {
-	background-color: #ff4136;
-	border: 1px #da352b solid;
+	background-color: #ffffff;
+	border: 1px solid #0074d9;
 	height: 3rem;
 	width: 4rem;
 	font-size: 1.25rem;
-	color: white;
+	color: #0074d9;
 }
+
 #mistake-button {
-	background-color: #2ecc40;
-	border: 1px #2db33c solid;
+	background-color: #0074D9;
 	padding: 1rem;
 	font-size: 1.25rem;
 	color: white;
 }
+
 #no-way-button {
-	background-color: #ff4136;
-	border: 1px #da352b solid;
+	background-color: #ffffff;
+	border: 1px solid #0074d9;
 	padding: 1rem;
 	font-size: 1.25rem;
-	color: white;
+	color: #0074d9;	
 }
+
 #guess-form {
 	display: flex;
 	flex-wrap: wrap;
 }
+
 .form-col {
 	flex: 1;
 }
-.radio {
-	font-size: 1rem;
+
+label {
+	line-height: 1.5rem;	
 }
+
+label:hover {
+	font-size: 1.5rem;
+	font-weight: 200;
+}
+
 h2 {
 	text-align: center;
 }
+
 #secret-kitten-img {
 	border: none;
 	display: block;
     margin-left: auto;
     margin-right: auto;
     width: 30%;
+}
+
+/* Close X button */
+.close {
+	position: absolute;
+	right: 1rem;
+	top: 1rem;
+	width: 1.5rem;
+	height: 1.5rem;
+	opacity: 0.3;
+}
+
+.close:hover {
+opacity: 1;
+}
+
+.close:before,
+.close:after {
+position: absolute;
+left: 0.5rem;
+content: ' ';
+height: 2rem;
+width: 2px;
+background-color: #333;
+}
+
+.close:before {
+transform: rotate(45deg);
+}
+
+.close:after {
+transform: rotate(-45deg);
 }
