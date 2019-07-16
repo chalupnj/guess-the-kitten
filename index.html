@@ -2,7 +2,8 @@
 <html>
 <head>
 	<title>Kittens!</title>
-	<link rel = "stylesheet" type="text/css" href="./kitty-grid-flex.css">
+	<link rel = "stylesheet" type="text/css" href="css/reset.css">
+	<link rel = "stylesheet" type="text/css" href="css/kitty-grid-flex.css">
 	<link href = "https://fonts.googleapis.com/css?family=Galada" rel = "stylesheet">
 </head>
 
@@ -15,7 +16,7 @@
         <!-- Get user's name -->
   		<div class="modal-content" id="username-modal">
 	    	<div class="modal-header">
-		        <button type="button" class="close" onclick="closeModal()" data-dismiss="modal">&times;</button>
+		        <a href="#" class="close" onclick="closeModal()" data-dismiss="modal"></a>
 		        <h3 class="modal-title">Hi! Welcome! What is your name?</h3>
 	    	</div>
 			<div class="modal-body">
@@ -31,7 +32,7 @@
 	    <!-- Determine whether user is a psychopath -->
 	    <div class="modal-content" id="psychopath-test-form">
 	    	<div class="modal-header">
-		        <button type="button" class="close" onclick="closeModal()" data-dismiss="modal">&times;</button>
+				<a href="#" class="close" onclick="closeModal()" data-dismiss="modal"></a>
 		        <h3 class="modal-title" id="hello-message">Hello. Do you like kittens?</h3>
 	    	</div>
 		    <div class="modal-footer">
@@ -43,7 +44,7 @@
 		<!-- Tell the user they are not a psychopath -->
 		<div class="modal-content" id="not-psychopath-modal">
 	    	<div class="modal-header">
-		        <button type="button" class="close" onclick="closeModal()" data-dismiss="modal">&times;</button>
+		        <a href="#" class="close" onclick="closeModal()" data-dismiss="modal"></a>
 		        <h3 class="modal-title">Correct! <br> You are not a psychopath so you may play the game.</h3>
 	    	</div>
 		    <div class="modal-footer">
@@ -54,7 +55,7 @@
 		<!-- Tell the user they are a psychopath -->
 		<div class="modal-content" id="is-psychopath-modal">
 	    	<div class="modal-header">
-		        <button type="button" class="close" onclick="closeModal()" data-dismiss="modal">&times;</button>
+		        <a href="#" class="close" onclick="closeModal()" data-dismiss="modal"></a>
 		        <h3 class="modal-title">Sorry, you are a psychopath. Rethink your values and try again.</h3>
 	    	</div>
 		    <div class="modal-footer">
@@ -66,12 +67,12 @@
         <!-- Get user's guess and check it. TO UPDATE, INSERT INPUT AND LABEL TAG FOR EACH NEW KITTEN. ADD THE NEW KITTENS TO THE END OF THE LIST AND ADJUST THE DIVS SO THEY ARE EVEN (THIS ORDER IS DIFFERENT THAN THE ORDER FOR THE IMAGES AND JS FILE). -->
   		<div class="modal-content" id="guess-modal">
 	    	<div class="modal-header">
-		        <button type="button" class="close" onclick="closeModal()" data-dismiss="modal">&times;</button>
+		        <a href="#" class="close" onclick="closeModal()" data-dismiss="modal"></a>
 		        <h3 class="modal-title">Which kitten am I thinking of?</h3>
 	    	</div>
 			<div class="modal-body">
 		        <form id="guess-form">
-		        	<div class="form-col">
+		        	<div class="form-col">						
 			        	<input type="radio" class="radio" name="kittyName" id="Tony" value="Tony">
 		        		<label for="Tony" id="Tony-label">Tony</label><br>
 		        		<input type="radio" class="radio" name="kittyName" id="Cleo" value="Cleo">
@@ -121,7 +122,7 @@
 	    <!-- Notify user of wrong guess and give hint. -->
 		<div class="modal-content" id="incorrect-guess-modal">
 	    	<div class="modal-header">
-		        <button type="button" class="close" onclick="closeModal()" data-dismiss="modal">&times;</button>
+		        <a href="#" class="close" onclick="closeModal()" data-dismiss="modal"></a>
 		        <h3 class="modal-title" id="incorrect-message">Wrong!</h3>
 	    	</div>
 		    <div class="modal-footer">
@@ -146,7 +147,7 @@
 		<!-- Show number of guesses. -->
 		<div class="modal-content" id="stats-modal">
 	    	<div class="modal-header">
-		        <button type="button" class="close" onclick="closeModal()" data-dismiss="modal">&times;</button>
+		        <a href="#" class="close" onclick="closeModal()" data-dismiss="modal"></a>
 		        <h3 class="modal-title" id="level-message">Good job!</h3>
 	    	</div>
 	    	<div class="modal-body">
@@ -160,85 +161,87 @@
 </div>
 
 <!-- TO ADD CATS, CROP PIC TO A SQUARE. ADD NEW IMG-CONTAINER DIV, ONE TO EACH COLUMN DIV SO THEY'RE EVEN. MAKE SURE TO ADD KITTEN TRAITS TO JS FILE IN THIS ORDER (TOP>BOTTOM). -->
-	<div class = "row">
-		<!-- Column 1 -->
-		<div class = "column">
-			<div class = "img-container">
-				<img src = "cat-imgs/Tony.jpg">
-				<figcaption>Tony</figcaption>
-			</div>
-			<div class = "img-container">
-				<img src = "cat-imgs/Franklin.jpg">
-				<figcaption>Franklin</figcaption>
-			</div>
-			<div class = "img-container">
-				<img src = "cat-imgs/Noodle.jpg">
-				<figcaption>Noodle</figcaption>
-			</div>
-			<div class = "img-container">		
-				<img src = "cat-imgs/Liberace.jpg">
-				<figcaption>Liberace</figcaption>
-			</div>
-			<div class = "img-container">		
-				<img src = "cat-imgs/Angeweena-Joween.jpg">
-				<figcaption class="long-name">Angeweena Joween</figcaption>
-			</div>
-			<div class = "img-container">		
-				<img src = "cat-imgs/Lunch.jpg">
-				<figcaption>Lunch</figcaption>
-			</div>
+<h1>Guess the Kitten</h1>
+<h3>A seemingly arbitrary guessing game</h3>
+<div class = "row">
+	<!-- Column 1 -->
+	<div class = "column">
+		<div class = "img-container">
+			<img src = "cat-imgs/Tony.jpg">
+			<figcaption>Tony</figcaption>
 		</div>
-		<!-- Column 2 -->
-		<div class = "column">
-			<div class = "img-container">
-				<img src = "cat-imgs/Cleo.jpg">
-				<figcaption>Cleo</figcaption>
-			</div>
-			<div class = "img-container">	
-				<img src = "cat-imgs/Nacho.jpg">
-				<figcaption>Nacho</figcaption>
-			</div>
-			<div class = "img-container">	
-				<img src = "cat-imgs/Holla.jpg">
-				<figcaption>Holla</figcaption>
-			</div>
-			<div class = "img-container">		
-				<img src = "cat-imgs/Liam.jpg">
-				<figcaption>Liam</figcaption>
-			</div>
-			<div class = "img-container">		
-				<img src = "cat-imgs/Meatloaf.jpg">
-				<figcaption>Meatloaf</figcaption>
-			</div>
-			<div class = "img-container">		
-				<img src = "cat-imgs/Dinner.jpg">
-				<figcaption>Dinner</figcaption>
-			</div>
+		<div class = "img-container">
+			<img src = "cat-imgs/Franklin.jpg">
+			<figcaption>Franklin</figcaption>
 		</div>
-		<!-- Column 3 -->
-		<div class = "column">
-			<div class = "img-container">
-				<img src = "cat-imgs/Birdie.jpg">
-				<figcaption>Birdie</figcaption>
-			</div>
-			<div class = "img-container">
-				<img src = "cat-imgs/Nutella.jpg">
-				<figcaption>Nutella</figcaption>
-			</div>
-			<div class = "img-container">		
-				<img src = "cat-imgs/Ween.jpg">
-				<figcaption>Ween</figcaption>
-			</div>
-			<div class = "img-container">		
-				<img src = "cat-imgs/Fartima.jpg">
-				<figcaption>Fartima</figcaption>
-			</div>
-			<div class = "img-container">		
-				<img src = "cat-imgs/Breakfast.jpg">
-				<figcaption>Breakfast</figcaption>
-			</div>
+		<div class = "img-container">
+			<img src = "cat-imgs/Noodle.jpg">
+			<figcaption>Noodle</figcaption>
+		</div>
+		<div class = "img-container">		
+			<img src = "cat-imgs/Liberace.jpg">
+			<figcaption>Liberace</figcaption>
+		</div>
+		<div class = "img-container">		
+			<img src = "cat-imgs/Angeweena-Joween.jpg">
+			<figcaption class="long-name">Angeweena Joween</figcaption>
+		</div>
+		<div class = "img-container">		
+			<img src = "cat-imgs/Lunch.jpg">
+			<figcaption>Lunch</figcaption>
 		</div>
 	</div>
+	<!-- Column 2 -->
+	<div class = "column">
+		<div class = "img-container">
+			<img src = "cat-imgs/Cleo.jpg">
+			<figcaption>Cleo</figcaption>
+		</div>
+		<div class = "img-container">	
+			<img src = "cat-imgs/Nacho.jpg">
+			<figcaption>Nacho</figcaption>
+		</div>
+		<div class = "img-container">	
+			<img src = "cat-imgs/Holla.jpg">
+			<figcaption>Holla</figcaption>
+		</div>
+		<div class = "img-container">		
+			<img src = "cat-imgs/Liam.jpg">
+			<figcaption>Liam</figcaption>
+		</div>
+		<div class = "img-container">		
+			<img src = "cat-imgs/Meatloaf.jpg">
+			<figcaption>Meatloaf</figcaption>
+		</div>
+		<div class = "img-container">		
+			<img src = "cat-imgs/Dinner.jpg">
+			<figcaption>Dinner</figcaption>
+		</div>
+	</div>
+	<!-- Column 3 -->
+	<div class = "column">
+		<div class = "img-container">
+			<img src = "cat-imgs/Birdie.jpg">
+			<figcaption>Birdie</figcaption>
+		</div>
+		<div class = "img-container">
+			<img src = "cat-imgs/Nutella.jpg">
+			<figcaption>Nutella</figcaption>
+		</div>
+		<div class = "img-container">		
+			<img src = "cat-imgs/Ween.jpg">
+			<figcaption>Ween</figcaption>
+		</div>
+		<div class = "img-container">		
+			<img src = "cat-imgs/Fartima.jpg">
+			<figcaption>Fartima</figcaption>
+		</div>
+		<div class = "img-container">		
+			<img src = "cat-imgs/Breakfast.jpg">
+			<figcaption>Breakfast</figcaption>
+		</div>
+	</div>
+</div>
 <script src = "kitten-script.js"></script>
 </body>
 </html>
